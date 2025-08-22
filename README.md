@@ -3,17 +3,19 @@ Jum'at 22 Agustus 2025
   
 # Wireless Security
   Ada dua jenis security yang biasa diimplementasikan dalam jaringan wireless, WEP & WPA. Kedua security ini merupakan wireless security yang berbeda generasi yang pastinya banyak perbedaan dan tingkat keamanan.  
+    
 **WEP (Wired Equivalent Privacy)**  
   Versi awal security wireless adalah WEP yang diperkenalkan pada September 1999. Bekerja mengunakan stream cipher untuk menjaga kerahasiaan data dan menggunakan CRC-32 checksum untuk memastikan keutuhan data pada saat terjadi transmisi data.  
     WEP juga mengunakan sebuah key. Keys terdiri dari 40 hingga 128 bits yang biasanya didefinisikan secara statik di perangkat AP dan Client sehingga bisa saling berkomunikasi.  
     Saat ini WEP sudah tidak banyak digunakan disebabkan karna WEB rentan terhadap serangan dan sudah dapat dilakukan cracking.  
+      
 **WPA (Wi-Fi Protected Access**  
     WPA merupakan generasi lanjutan dari WEP. Dikembangkan karna kerentanan WEP security terhadap serangan. Untuk algoritma enskripsi WPA mengunakan Temporal Key Integrity Protocol (TKIP) atau bisa juga menggunakan Advanced Encryption Standard (AES) dengan kemampuan encryipt lebih tinggi.  
     Pengembangan dari WPA adalah WPA2 yang dalam proses enskripsinya bisa menggunakan kombinasi TKIP dan AES. Dalam hal authentikasi, WPA/WPA2 dapat menerapkan,  
     1. Pre-Shared-Key, WPA-PSK / WPA2-PSK (WPA Personal)  
     2. EAP, WPA-EAP / WPA2-EAP  
     3. RADIUS Server, dengan mode WPA-EAP dapat diterapkkan authentikasi terpusat pada RADIUS server (WPA Enterprise)  
-
+  
 # Mikrotik Wireless Security
   Kita bisa set keamanan wireless di **wireless > security profiles** dan add untuk membuat yang baru.  
   1. None
@@ -24,8 +26,9 @@ Jum'at 22 Agustus 2025
         Berjalan di WEP mode. Support encription dan decryption, akan tetapi mengijinkan perangkat wireless untuk menerima dan mengirim frames yang tidak dienskripsi. Perangkat akan mengirimkan frames yang tidak dienskripsi jika algoritma enskripsi diset none. Wireless station yang menggunakan ke AP yang menggunakan mode static keys required.
   4. Dynamic Keys
         Mode autentikasi EAP (Extensible Authentication Protocol) yang disupport oleh Mikrotik adalah EAP-TLS, dimana proses autentikasi dilakukan dengan mengunakan CA Certificate.  Mode PSK (Pre Shared Key), dukungan keamanan dari enskripsi WPA/WPA2 dan cara setting yang mudah.
-  
+    
 # Konfigurasi Wireless Security
+  
 **WEP Static Keys**  
   1. Masuk ke tab security profiles di menu wireless, lalu add atau edit yang sudah ada.
 ![](IMAGES/security.png)  
@@ -33,13 +36,13 @@ Jum'at 22 Agustus 2025
 ![](IMAGES/hex.png)  
   3. Setelah itu masukan ke kolom **0x**  
 ![](IMAGES/security2.png)
-  
+    
 **WPA/WPA2 PSK**  
   1. Masuk ke tab security profiles di menu wireless, lalu add atau edit yang sudah ada.  
 ![](IMAGES/psk.png)  
   2. Pilih Dynamuic keys lalu checklist WPA/WPA1 PSK, setelah itu masukan password dibagian **WPA/2 Pre-Shared Key**.
 ![](IMAGES/psk.png)
-
+   
 **WPA/WPA2 EAP**  
   1. Masuk ke tab security profiles di menu wireless, lalu add atau edit yang sudah ada.  
 ![](IMAGES/eap.png)  
